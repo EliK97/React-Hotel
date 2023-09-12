@@ -37,13 +37,13 @@ function HomePage() {
       <section className="featured-hotels">
         <h2>Featured Hotels</h2>
         <div className="hotel-list">
-          {featuredHotels.map((hotel) => (
+          {/* {featuredHotels.map((hotel) => (
             <div key={hotel.id} className="hotel-card">
               <h3>{hotel.name}</h3>
               <p>{hotel.description}</p>
               <button>View Details</button>
             </div>
-          ))}
+          ))} */}
         </div>
       </section>
     </div>

@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
-import NavBar from '../../components/NavBar/NavBar';
-import Review from '../../components/Review/Review';
-import Room from '../../components/Room/Room';
-import Booking from '../../components/Booking/Booking';
+import NavBar from '../../components/NavBar/NavBar.jsx';
+import Review from '../../components/Review/Review.jsx';
+import Room from '../../components/Room/Room.jsx';
+import Booking from '../../components/Booking/Booking.jsx';
+import Home from '../../components/Home/Home.jsx';
 
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
               <Route path="/review/new" element={<Review />} />
               <Route path="/room/new" element={<Room/>} />
               <Route path="/booking/new" element={<Booking/>} />
+              <Route path="/home" element={<Home/>} />
             </Routes>
           </>
           :
