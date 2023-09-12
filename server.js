@@ -2,6 +2,10 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const bookingRouter = require('./routes/api/booking');
+const reviewRouter = require('./routes/api/review');
+const roomRouter = require('./routes/api/room');
+
 // Always require and configure near the top
 require('dotenv').config();
 // Connect to the database
@@ -11,10 +15,13 @@ const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use('/booking', bookingRouter);
+app.use('/review', reviewRouter);
+app.use('/room', roomRouter);
 
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder
-app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+//rapp.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Middleware to check and verify a JWT and

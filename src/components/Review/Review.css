@@ -1,0 +1,23 @@
+/* review.css */
+
+.review {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  .review h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .review p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  /* You can add more styles as needed */
+  
