@@ -3,6 +3,13 @@
 <img width="661" alt="Screenshot 2023-09-13 at 1 21 40 PM" src="https://github.com/EliK97/React-Hotel/assets/136523113/e73bb5d6-6b61-4afb-8847-e384846ce1d2">
 
 
+# Authenticaion Page 
+
+User Registration: Allow users to create new accounts with email verification.
+User Login: Securely authenticate users with email and password.
+
+https://nameless-depths-01886-44d912d92be4.herokuapp.com/
+
 # Browse Reviews
 
 Users can view a list of hotels on the main page.
@@ -51,3 +58,8 @@ HTML and CSS: For structuring and styling the web pages.
 JavaScript: For implementing functionality.
 
 Node.js: For running the development server.
+
+
+# Heroku Deployment 
+
+https://nameless-depths-01886-44d912d92be4.herokuapp.com/
