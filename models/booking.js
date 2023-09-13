@@ -1,40 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-function ValidBookingDate(bookingDate) {
-  
-  const parsedDate = new Date(bookingDate);
-
-  if (
-    Object.prototype.toString.call(parsedDate) === '[object Date]' &&
-    !isNaN(parsedDate) &&
-    parsedDate > new Date()
-  ) {
-    return true; // It's a valid future date
-  } else {
-    return false; // It's not a valid future date
-  }
-}
-
-// Example usage:
-const bookingDate = '2023-09-15'; // Replace with your date
-if (ValidBookingDate(bookingDate)) {
-  console.log('Booking date is valid.');
-} else {
-  console.log('Booking date is not valid.');
-}
-
-
 const bookingSchema = new mongoose.Schema({
     room_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Rooms',
       required: [true, 'Room id is required field']
     },
-    booking_date: {
+      booking_paid: {
+        type: Boolean,
+        ref: 'Rooms',
+        required: false
+    },
+    booking_dates: {
       type: [Date],
       required: [true, 'Booking `booking_dates` is required field'],
-      validate: [ValidBookingDate, 'Please provide valid future dates for `booking_dates`']
+      //novalidate: [validateBookingDates, 'Please provide valid future dates for `booking_dates`']
     },
     booking_status: {
       type: String,

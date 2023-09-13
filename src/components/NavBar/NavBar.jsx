@@ -13,7 +13,7 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       <Link to="/booking/new">Booking</Link>
       &nbsp;&nbsp;
-      <Link to="/room/new">Rooms</Link>
+      <Link to="/room">Rooms</Link>
       &nbsp;&nbsp;
       <Link to="/home/">Home</Link>
       &nbsp;&nbsp;

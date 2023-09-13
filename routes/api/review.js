@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const Review = require('../../controllers/api/review.js'); // Import your Mongoose Review model
+const Review = require('../../models/review'); // Import your Mongoose Review model
 
 // Create a new review
-router.post('/reviews', async (req, res) => {
+router.post('/', async (req, res) => {
+  console.log('Inside The Post Controller',req.body)
   try {
     const reviewData = req.body;
     const newReview = new Review(reviewData);
@@ -15,7 +16,7 @@ router.post('/reviews', async (req, res) => {
 });
 
 // Fetch reviews for a specific room
-router.get('/reviews/room/:roomId', async (req, res) => {
+router.get('/room/:roomId', async (req, res) => {
   try {
     const roomId = req.params.roomId;
     const reviews = await Review.find({ room_id: roomId });
@@ -26,7 +27,7 @@ router.get('/reviews/room/:roomId', async (req, res) => {
 });
 
 // Update a review by review ID
-router.put('/reviews/:reviewId', async (req, res) => {
+router.put('/:reviewId', async (req, res) => {
   try {
     const reviewId = req.params.reviewId;
     const updatedReviewData = req.body;
@@ -38,7 +39,7 @@ router.put('/reviews/:reviewId', async (req, res) => {
 });
 
 // Delete a review by review ID
-router.delete('/reviews/:reviewId', async (req, res) => {
+router.delete('/:reviewId', async (req, res) => {
   try {
     const reviewId = req.params.reviewId;
     const deletedReview = await Review.findByIdAndDelete(reviewId);

@@ -1,5 +1,8 @@
 import React from 'react';
 import './Home.css';
+import './HomeCaro';
+import UncontrolledExample from './HomeCaro';
+
 
 function HomePage() {
   const featuredHotels = [
@@ -28,7 +31,7 @@ function HomePage() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>Welcome to Hotel Reviews</h1>
+          <h1 className='text-danger'> Welcome to Hotel Reviews</h1>
           <p>Discover and share your hotel experiences.</p>
         </div>
       </section>
@@ -43,11 +46,16 @@ function HomePage() {
               <p>{hotel.description}</p>
               <button>View Details</button>
             </div>
-          ))} */}
+          ))} */} <UncontrolledExample></UncontrolledExample> 
+      
         </div>
       </section>
     </div>
   );
 }
+
+
+
+
 
 export default HomePage;

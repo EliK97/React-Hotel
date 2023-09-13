@@ -48,3 +48,19 @@ async function deleteBooking(bookingId) {
   }
 }
 
+
+async function getCart(userId) {
+  try {
+    return await Booking.findOneAndUpdate(
+      // query object
+      { booking_by: userId, booking_paid: false },
+      // update doc - provides values when inserting
+      { booking_by: userId },
+      // upsert option
+      { upsert: true, new: true }
+    );
+  } catch (error) {
+    throw new Error(`Error deleting booking: ${error.message}`);
+  }
+}
+

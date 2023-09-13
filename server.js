@@ -15,9 +15,9 @@ const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use('/booking', bookingRouter);
-app.use('/review', reviewRouter);
-app.use('/room', roomRouter);
+app.use('/api/booking', bookingRouter);
+app.use('/api/review', reviewRouter);
+app.use('/api/room', roomRouter);
 
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder

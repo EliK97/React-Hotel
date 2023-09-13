@@ -1,13 +1,19 @@
 const mongoose = require('mongoose');
 const Room = require('../../models/room.js'); // Import your Mongoose Room model
+const room = require('../../models/room.js');
 
 module.exports = {
   getRoomById,
   createRoom,
   updateRoom,
   deleteRoom,
+  index
 };
 
+async function index(req, res) {
+  const room = await room.find({})
+  res.json(room);
+}
 
 // Controller function to get a room by room ID
 async function getRoomById(roomId) {

@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Room = require('../../controllers/api/room.js'); // Import your Mongoose Room model
+const Room = require('../../models/room'); // Import your Mongoose Room model
 
 // Create a new room
-router.post('/rooms', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const roomData = req.body;
     const newRoom = new Room(roomData);
@@ -15,9 +15,10 @@ router.post('/rooms', async (req, res) => {
 });
 
 // Get all rooms
-router.get('/rooms', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const rooms = await Room.find();
+    console.log('index')
+    const rooms = await Room.find({});
     res.status(200).json(rooms);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -25,7 +26,7 @@ router.get('/rooms', async (req, res) => {
 });
 
 // Get a room by room ID
-router.get('/rooms/:roomId', async (req, res) => {
+router.get('/:roomId', async (req, res) => {
   try {
     const roomId = req.params.roomId;
     const room = await Room.findById(roomId);
@@ -39,7 +40,7 @@ router.get('/rooms/:roomId', async (req, res) => {
 });
 
 // Update a room by room ID
-router.put('/rooms/:roomId', async (req, res) => {
+router.put('/:roomId', async (req, res) => {
   try {
     const roomId = req.params.roomId;
     const updatedRoomData = req.body;
@@ -51,7 +52,7 @@ router.put('/rooms/:roomId', async (req, res) => {
 });
 
 // Delete a room by room ID
-router.delete('/rooms/:roomId', async (req, res) => {
+router.delete('/:roomId', async (req, res) => {
   try {
     const roomId = req.params.roomId;
     const deletedRoom = await Room.findByIdAndDelete(roomId);

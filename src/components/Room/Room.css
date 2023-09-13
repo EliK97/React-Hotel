@@ -1,38 +1,52 @@
 /* roomList.css */
 
+/* HotelPage.css */
+.hotel-page {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #007BFF;
+  margin-bottom: 20px;
+}
+
+.room-info {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.room-info h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.room-info p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+
+
 .room-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  /* Style the header */
-  .room-list h1 {
-    font-size: 24px;
-    margin: 20px 0;
-  }
-  
-  /* Style each room card */
-  .room-card {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 10px;
-    width: 300px;
-    background-color: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
-  /* Style room details */
-  .room-details h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .room-details p {
-    font-size: 14px;
-    margin: 5px 0;
-  }
-  
-  /* You can add more styles as needed */
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.room-info {
+  flex-basis: calc(33.33% - 20px);
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+/* Adjust styles as needed */
