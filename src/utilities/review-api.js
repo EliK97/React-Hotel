@@ -22,8 +22,8 @@ export function addReview(review) {
   return sendRequest(`${BASE_URL}`, 'POST', review);
 }
 
-export function setItemQtyInCart(itemId, newQty) {
-  return sendRequest(`${BASE_URL}/cart/qty`, 'PUT', { itemId, newQty });
+export function update(payload,id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'PUT', payload);
 }
 
 export function checkout() {

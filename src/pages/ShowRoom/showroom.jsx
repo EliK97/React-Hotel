@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as roomAPI from "../../utilities/rooms-api.js"; // Importing The Room API
 import * as reviewAPI from "../../utilities/review-api.js";
+import ShowReview from "../ShowReview/showreview.jsx";
+import { Link } from "react-router-dom";
 
 
 export default function ShowRoom({ user }) {
@@ -56,7 +58,7 @@ export default function ShowRoom({ user }) {
       </form>
       {reviews.map((review) =>(
         <div>
-            <p>{review.message}</p>
+           <Link to ={`/review/${review._id}`}> <p>{review.message}</p> </Link>
         </div>
       )) }
     </div>

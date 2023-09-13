@@ -11,6 +11,7 @@ import LineItem from '../../components/Booking/BookingLineItem.jsx';
 import Home from '../../components/Home/Home.jsx';
 import RoomList from '../../components/Room/RoomList.jsx';
 import ShowRoom from '../ShowRoom/showroom.jsx';
+import ShowReview from '../ShowReview/showreview.jsx';
 
 
 export default function App() {
@@ -66,6 +67,7 @@ export default function App() {
               <Route path="/home" element={<Home/>} />
               <Route path="/review" element={<Review/>} /> 
               <Route path="/:roomId" element={<ShowRoom user={user}setUser={setUser}/>} /> 
+              <Route path="/review/:reviewId" element={<ShowReview user={user}setUser={setUser}/>} /> 
             </Routes>
           </>
           :

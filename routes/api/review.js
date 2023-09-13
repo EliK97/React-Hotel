@@ -38,6 +38,18 @@ router.put('/:reviewId', async (req, res) => {
   }
 });
 
+router.get('/:reviewId', async (req, res) => {
+  try {
+    const reviewId = req.params.reviewId;
+    const updatedReview = await Review.findById(reviewId,);
+    res.status(200).json(updatedReview);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
+
 // Delete a review by review ID
 router.delete('/:reviewId', async (req, res) => {
   try {
